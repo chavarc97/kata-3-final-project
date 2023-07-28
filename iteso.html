@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="login.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script defer src="./src/main.js"></script>
+    <title>PORTAL MAESTROS</title>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./IMG/ITESO Universidad Jesuita de Guadalajara.svg" alt="Logo" width="50" height="40" class="d-inline-block align-text-top">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="btn btn-primary" aria-current="page" href="#">Log Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container my-4">
+    <div class="row">
+      <!-- formulario agregar -->
+      <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <h2>Formulario Alumno</h2>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="student-name" placeholder="Nombre">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="student-last-name" placeholder="Apellido">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Edad</label>
+          <input type="number" class="form-control" id="student-age" placeholder="Edad">
+        </div>
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary" id="add-btn" type="button">Agregar</button>
+          <button class="btn btn-secondary" id="clean-btn" type="button">Limpiar</button>
+        </div>
+      </div>
+      <!-- tabla -->
+      <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+        <h2>Alumnos</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Edad</th>
+              <th>Materias inscritas</th>
+              <th>Calificaciones</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- busqueda -->
+    <div class="d-grid gap-2 my-5">
+      <div class="mb-3">
+        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Alumno">
+      </div>
+      <button class="btn btn-primary" type="button">Buscar</button>
+    </div>
+  </div>
+</body>
+</html>
