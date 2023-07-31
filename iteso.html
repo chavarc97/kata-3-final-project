@@ -33,47 +33,75 @@
     <div class="row">
       <!-- formulario agregar -->
       <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-        <h2>Formulario Alumno</h2>
+        <h2>Submit Student</h2>
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="student-name" placeholder="Nombre">
+          <label for="exampleFormControlInput1" class="form-label">Name</label>
+          <input type="text" class="form-control" id="student-name" placeholder="Name">
         </div>
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Apellido</label>
-          <input type="text" class="form-control" id="student-last-name" placeholder="Apellido">
+          <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="student-last-name" placeholder="Last Name">
         </div>
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Edad</label>
-          <input type="number" class="form-control" id="student-age" placeholder="Edad">
+          <label for="exampleFormControlInput1" class="form-label">Age</label>
+          <input type="number" class="form-control" id="student-age" placeholder="Age">
         </div>
+        <!-- CLASESS -->
+        <div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+            <label class="form-check-label" for="inlineCheckbox1">English</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+            <label class="form-check-label" for="inlineCheckbox2">Cybersecurity 101</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+            <label class="form-check-label" for="inlineCheckbox2">POO</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+            <label class="form-check-label" for="inlineCheckbox2">Algorithm Design</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+            <label class="form-check-label" for="inlineCheckbox2">SPANISH</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+            <label class="form-check-label" for="inlineCheckbox2">Algebra</label>
+          </div>
+        </div>
+        <!-- BUTTONS -->
         <div class="d-grid gap-2">
-          <button class="btn btn-primary" id="add-btn" type="button">Agregar</button>
-          <button class="btn btn-secondary" id="clean-btn" type="button">Limpiar</button>
+          <button class="btn btn-primary" id="add-btn" type="button">Submit</button>
+          <button class="btn btn-secondary" id="clean-btn" type="button">Clean</button>
         </div>
       </div>
-      <!-- tabla -->
+      <!-- Table -->
       <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
         <h2>Alumnos</h2>
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Edad</th>
-              <th>Materias inscritas</th>
-              <th>Calificaciones</th>
+              <th>Name</th>
+              <th>Last Name</th>
+              <th>Age</th>
+              <th>Classes</th>
+              <th>Grades</th>
             </tr>
           </thead>
           <tbody id="table-body"></tbody>
         </table>
       </div>
     </div>
-    <!-- busqueda -->
+    <!-- Search -->
     <div class="d-grid gap-2 my-5">
       <div class="mb-3">
-        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Alumno">
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Student">
       </div>
-      <button class="btn btn-primary" type="button">Buscar</button>
+      <button class="btn btn-primary" type="button">Search</button>
     </div>
   </div>
 </body>
