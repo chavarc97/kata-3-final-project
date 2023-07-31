@@ -43,7 +43,13 @@ function addStudents() {
     let studentName = document.getElementById("student-name").value;
     let studentLastName =document.getElementById("student-last-name").value;
     let studentAge =document.getElementById("student-age").value;
-    const alumni = new Students(studentName, studentLastName, studentAge, []);
+    let classes1 = document.getElementById('inlineCheckbox')
+    let grade1 = document.getElementById('grade');
+    let studentClasses = {
+        class: classes1.value,
+        grade: grade1.value
+    }
+    const alumni = new Students(studentName, studentLastName, studentAge, [studentClasses]);
     studentList.add(alumni);
 
     cleanForm();
