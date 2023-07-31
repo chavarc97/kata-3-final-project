@@ -32,7 +32,15 @@ logOutBtn.addEventListener('click', () =>{
     }
     // search for any student = to the name given
     search(name,lastName){
-
+        let auxList = this.list;
+        let studentFound = null;
+        for (let i = 0; i < auxList.length; i++) {
+            if (name === auxList[i].firstName || lastName === auxList[i].lastName) {
+                studentFound = auxList[i];
+                break;
+            }        
+        }
+        return studentFound;
     }
  }
 
@@ -43,13 +51,21 @@ function addStudents() {
     let studentName = document.getElementById("student-name").value;
     let studentLastName =document.getElementById("student-last-name").value;
     let studentAge =document.getElementById("student-age").value;
-    let classes1 = document.getElementById('inlineCheckbox')
-    let grade1 = document.getElementById('grade');
-    let studentClasses = {
-        class: classes1.value,
-        grade: grade1.value
-    }
-    const alumni = new Students(studentName, studentLastName, studentAge, [studentClasses]);
+    let itemForm = document.getElementById('checkbox-form');
+    let classes = document.querySelectorAll('input[type="checkbox"]') 
+    let resultClasses = []
+    classes.forEach(item => {
+        if (item.checked) {
+            let studentClasses = {
+                class: item.value,
+                selected: item.checked
+            } 
+            resultClasses.push(studentClasses)
+        }    
+    });
+    
+   
+    const alumni = new Students(studentName, studentLastName, studentAge, resultClasses);
     studentList.add(alumni);
 
     cleanForm();
@@ -120,7 +136,28 @@ function refreshTable() {
 
 
 
-var jhonStu = new Students("Jhon", "Montaño", 21, [{class: 'Inglés', grade: 9},{class: 'Diseño v', grade:9},{class: 'Español', grade: 10}]);
+var jhonStu = new Students("Jhon", "Montaño", 21, [{class: 'Inglés'},{class: 'Diseño v'},{class: 'Español'}]);
 studentList.add(jhonStu);
 
 refreshTable()
+
+// Search student and Show on HTML
+
+function searchStudent() {
+    let input = document.getElementById('search-stu');
+    let showStudent = document.getElementById('show-stu');
+
+    let studentName = input.value;
+    let studentFound = studentList.search(studentName);
+    console.log(studentName);
+
+    if (studentFound) {
+        showStudent.textContent = studentFound.firstName + studentFound.lastName + ' Age: ' + studentFound.age + ' classes: ' + studentFound.classes;
+    } else{
+        showStudent.textContent = 'Student missing'
+        input = ''
+    }
+}
+
+let searchBtn = document.getElementById('seach-btn')
+searchBtn.addEventListener('click', searchStudent);

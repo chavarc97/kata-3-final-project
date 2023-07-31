@@ -47,7 +47,7 @@
           <input type="number" class="form-control" id="student-age" placeholder="Age">
         </div>
         <!-- CLASESS -->
-        <div>
+        <div id="checkbox-form">
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="inlineCheckbox" value="English">
             <label class="form-check-label" for="inlineCheckbox1">English</label>
@@ -95,7 +95,7 @@
               <th>Last Name</th>
               <th>Age</th>
               <th>Classes</th>
-              <th>Grades</th>
+              <!-- <th>Grades</th> -->
             </tr>
           </thead>
           <tbody id="table-body"></tbody>
@@ -105,9 +105,15 @@
     <!-- Search -->
     <div class="d-grid gap-2 my-5">
       <div class="mb-3">
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Student">
+        <input type="text" class="form-control" id="search-stu" placeholder="Student">
       </div>
-      <button class="btn btn-primary" type="button">Search</button>
+      <button class="btn btn-primary" id="seach-btn" type="button">Search</button>
+    </div>
+    <div class="card w-100 mb-3">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <p class="card-text" id="show-stu"></p>
+      </div>
     </div>
   </div>
 </body>
